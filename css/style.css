@@ -1,0 +1,384 @@
+/* =========================
+   GOOGLE FONT
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#eef4fb;
+    color:#1e293b;
+    line-height:1.6;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.dashboard-container{
+    width:95%;
+    max-width:1300px;
+    margin:30px auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.dashboard-header{
+    background:linear-gradient(135deg,#0f4c81,#1d75d9);
+    color:#fff;
+    padding:35px;
+    border-radius:18px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.dashboard-header h1{
+    font-size:34px;
+    font-weight:600;
+}
+
+.small-title{
+    font-size:14px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    opacity:.8;
+}
+
+.header-description{
+    margin-top:8px;
+    opacity:.9;
+}
+
+.college-logo{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    background:rgba(255,255,255,.2);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:45px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.card{
+    background:#fff;
+    border-radius:15px;
+    padding:25px;
+    margin-bottom:22px;
+    box-shadow:0 6px 20px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+
+/* =========================
+   SECTION
+========================= */
+
+.section-heading,
+.section-title-row,
+.statistic-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.section-heading{
+    justify-content:flex-start;
+    gap:15px;
+}
+
+.section-icon{
+    width:55px;
+    height:55px;
+    background:#dbeafe;
+    color:#0f4c81;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    font-size:24px;
+}
+
+.section-label{
+    font-size:13px;
+    color:#64748b;
+    text-transform:uppercase;
+    font-weight:600;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.statistics-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:20px;
+    margin-bottom:20px;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.form-group{
+    margin-top:18px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:500;
+}
+
+input,
+select{
+    width:100%;
+    padding:12px 15px;
+    border:1px solid #cbd5e1;
+    border-radius:10px;
+    font-size:15px;
+    transition:.3s;
+    outline:none;
+}
+
+input:focus,
+select:focus{
+    border-color:#1976d2;
+    box-shadow:0 0 0 4px rgba(25,118,210,.15);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+button{
+    margin-top:18px;
+    padding:12px 22px;
+    border:none;
+    border-radius:8px;
+    background:#1976d2;
+    color:white;
+    cursor:pointer;
+    font-size:15px;
+    transition:.3s;
+    font-weight:500;
+}
+
+button:hover{
+    background:#125aa3;
+}
+
+.secondary-button{
+    background:#ffffff;
+    color:#1976d2;
+    border:2px solid #1976d2;
+}
+
+.secondary-button:hover{
+    background:#1976d2;
+    color:white;
+}
+
+.primary-button{
+    background:#0f4c81;
+}
+
+/* =========================
+   STATUS
+========================= */
+
+.status-message{
+    margin-top:15px;
+    font-weight:600;
+}
+
+.green{
+    color:#16a34a;
+}
+
+.red{
+    color:#dc2626;
+}
+
+.blueviolet{
+    color:#2563eb;
+}
+
+/* =========================
+   STUDENT LIST
+========================= */
+
+.student-list{
+    list-style:none;
+    margin-top:20px;
+}
+
+.student-list li{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:15px;
+    border-bottom:1px solid #e2e8f0;
+    transition:.3s;
+}
+
+.student-list li:hover{
+    background:#f8fbff;
+}
+
+.student-avatar{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:#1976d2;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+    font-size:20px;
+}
+
+.student-list h3{
+    margin-bottom:3px;
+}
+
+.student-list p{
+    color:#64748b;
+    font-size:14px;
+}
+
+/* =========================
+   BADGE
+========================= */
+
+.count-badge{
+    background:#1976d2;
+    color:white;
+    padding:8px 16px;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:500;
+}
+
+/* =========================
+   FILTER GRID
+========================= */
+
+.filter-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+    margin-top:20px;
+}
+
+.filter-item{
+    background:#f8fbff;
+    border-left:5px solid #1976d2;
+    padding:18px;
+    border-radius:10px;
+}
+
+.filter-item span{
+    display:block;
+    color:#64748b;
+    margin-bottom:5px;
+}
+
+.filter-item strong{
+    color:#0f4c81;
+}
+
+/* =========================
+   INFO BOXES
+========================= */
+
+.department-info,
+.init-details,
+.disable-box,
+.readonly-box{
+    margin-top:20px;
+}
+
+.init-details{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.init-details div{
+    background:#f8fbff;
+    padding:20px;
+    border-radius:12px;
+}
+
+.selected-value{
+    margin-top:18px;
+    font-weight:500;
+}
+
+.empty-message{
+    color:#64748b;
+}
+
+.readonly-status{
+    margin-top:12px;
+    color:#1976d2;
+    font-weight:600;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    text-align:center;
+    margin:30px 0;
+    color:#64748b;
+    font-size:15px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+.dashboard-header{
+    flex-direction:column;
+    text-align:center;
+    gap:20px;
+}
+
+.section-title-row,
+.statistic-header{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+}
+
+button{
+    width:100%;
+}
+
+}
