@@ -48,6 +48,13 @@ app.controller("dashboardcontroller", function ($scope) {
     // Hide Student List Initially
     $scope.showstudents = false;
 
+    // student registration
+    $scope.student = {};
+
+    $scope.registerStudent = function (){
+        alert("Student Registration is Successfull")
+    }
+
     // Add Student
     $scope.addstudent = function () {
         $scope.totalStudents++;
