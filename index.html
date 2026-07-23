@@ -399,63 +399,238 @@
 
 
         <!-- REGISTRATION -->
-      <h2>Student Registration</h2>
-      <form name="studentForm">
-        <label>Student Name:</label>
-        <input
-          type="text"
-          name="studentName"
-          ng-model="student.name"
-          required
-        />
+        <section class="card">
 
-        <p
-          ng-show="studentForm.studentName.$touched && studentForm.studentName.$invalid"
-          style="color: red"
-        >
-          Student Name is required.
-        </p>
+            <div class="section-heading">
+                <span class="section-icon">🧾</span>
+
+                <div>
+                    <p class="section-label">Student Details</p>
+                    <h2>Student Registration</h2>
+                </div>
+            </div>
+
+            <form name="studentForm">
+
+                <div class="registration-grid">
+
+                    <!-- Student Name -->
+                    <div class="registration-field">
+
+                        <label for="studentName">
+                            👤 Student Name
+                        </label>
+
+                        <input type="text" id="studentName" name="studentName" ng-model="student.name" required>
+
+                        <p class="error" ng-show="studentForm.studentName.$touched &&
+                             studentForm.studentName.$error.required">
+                            Student name is required.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Email -->
+                    <div class="registration-field">
+
+                        <label for="studentEmail">
+                            📧 Student Email
+                        </label>
+
+                        <input type="email" id="studentEmail" name="studentEmail" ng-model="student.email"
+                            placeholder="example@gmail.com" required>
+
+                        <p class="error" ng-show="studentForm.studentEmail.$touched &&
+                             studentForm.studentEmail.$error.required">
+                            Email is required.
+                        </p>
+
+                        <p class="error" ng-show="studentForm.studentEmail.$touched &&
+                             studentForm.studentEmail.$error.email">
+                            Enter a valid email address.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Phone -->
+                    <div class="registration-field">
+
+                        <label for="phone">
+                            📱 Phone Number
+                        </label>
+
+                        <input type="tel" id="phone" name="phone" ng-model="student.phone"
+                            placeholder="Enter 10-digit phone number" ng-pattern="/^[0-9]{10}$/" required>
+
+                        <p class="error" ng-show="studentForm.phone.$touched &&
+                             studentForm.phone.$error.required">
+                            Phone number is required.
+                        </p>
+
+                        <p class="error" ng-show="studentForm.phone.$touched &&
+                             studentForm.phone.$error.pattern">
+                            Phone number must contain exactly 10 digits.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Age -->
+                    <div class="registration-field">
+
+                        <label for="age">
+                            🎂 Age
+                        </label>
+
+                        <input type="number" id="age" name="age" ng-model="student.age" min="19" max="60" required>
+
+                        <p class="error" ng-show="studentForm.age.$touched &&
+                             studentForm.age.$error.required">
+                            Age is required.
+                        </p>
+
+                        <p class="error" ng-show="studentForm.age.$touched &&
+                             studentForm.age.$error.min">
+                            Students below 19 years are not eligible.
+                        </p>
+
+                        <p class="error" ng-show="studentForm.age.$touched &&
+                             studentForm.age.$error.max">
+                            Age cannot be greater than 60.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Gender -->
+                    <div class="registration-field">
+
+                        <label>
+                            👤 Gender
+                        </label>
+
+                        <div class="radio-group">
+
+                            <label>
+                                <input type="radio" name="gender" ng-model="student.gender" value="Male" required>
+                                Male
+                            </label>
+
+                            <label>
+                                <input type="radio" name="gender" ng-model="student.gender" value="Female">
+                                Female
+                            </label>
+
+                        </div>
+
+                        <p class="error" ng-show="studentForm.gender.$touched &&
+                             studentForm.gender.$invalid">
+                            Please select a gender.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Department -->
+                    <div class="registration-field">
+
+                        <label for="registrationDepartment">
+                            🏛 Department
+                        </label>
+
+                        <select id="registrationDepartment" name="department" ng-model="student.department"
+                            ng-options="dept for dept in departments" required>
+                            <option value="">Select Department</option>
+                        </select>
+
+                        <p class="error" ng-show="studentForm.department.$touched &&
+                             studentForm.department.$invalid">
+                            Please select a department.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Address -->
+                    <div class="registration-field full-width">
+
+                        <label for="address">
+                            🏠 Address
+                        </label>
+
+                        <textarea id="address" name="address" ng-model="student.address" placeholder="Enter address"
+                            ng-minlength="10" ng-maxlength="100" required></textarea>
+
+                        <p class="error" ng-show="studentForm.address.$touched &&
+                             studentForm.address.$error.required">
+                            Address is required.
+                        </p>
+
+                        <p class="error" ng-show="studentForm.address.$touched &&
+                             studentForm.address.$error.minlength">
+                            Address must contain at least 10 characters.
+                        </p>
+
+                        <p class="error" ng-show="studentForm.address.$touched &&
+                             studentForm.address.$error.maxlength">
+                            Address cannot exceed 100 characters.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <button type="button" class="register-button" ng-click="registerStudent(studentForm)">
+                    Register Student
+                </button>
+
+            </form>
+
+        </section>
 
         <br /><br />
 
-        <label>Student email:</label>
-        <input
-          type="email"
-          name="studentEmail"
-          ng-model="student.email"
-          required
-        />
+        <!-- FORM STATUS -->
+        <section class="card">
 
-        <p
-          ng-show="studentForm.studentEmail.$touched && studentForm.studentEmail.$invalid"
-          style="color: red"
-        >
-          Enter a valid email.
-        </p>
-        <br /><br />
+            <div class="section-heading">
+                <span class="section-icon">📊</span>
 
-        <button>Register Student</button>
-      </form>
+                <div>
+                    <p class="section-label">AngularJS Form</p>
+                    <h2>Form Status</h2>
+                </div>
+            </div>
 
-      <br /><br />
+            <div class="form-status-grid">
 
-      <!-- FORM STATUS -->
-      <h2>Form Status</h2>
+                <p>
+                    Valid
+                    <strong>{{studentForm.$valid}}</strong>
+                </p>
 
-      <p>valid: {{studentForm.$valid}}</p>
+                <p>
+                    Invalid
+                    <strong>{{studentForm.$invalid}}</strong>
+                </p>
 
-      <p>invalid: {{studentForm.$invalid}}</p>
+                <p>
+                    Pristine
+                    <strong>{{studentForm.$pristine}}</strong>
+                </p>
 
-      <p>pristine: {{studentForm.$pristine}}</p>
+                <p>
+                    Dirty
+                    <strong>{{studentForm.$dirty}}</strong>
+                </p>
 
-      <p>dirty: {{studentForm.$dirty}}</p>
+            </div>
 
-      <p
-        ng-show="studentForm.studentForm.$touched && studentForm.studentForm.$invalid"
-        style="color: red"
-      ></p>
+        </section>
 
-      
+
         <footer>
             <p>
                 Campus 360 · Student Management Dashboard
