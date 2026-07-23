@@ -397,6 +397,65 @@
 
         </section>
 
+
+        <!-- REGISTRATION -->
+      <h2>Student Registration</h2>
+      <form name="studentForm">
+        <label>Student Name:</label>
+        <input
+          type="text"
+          name="studentName"
+          ng-model="student.name"
+          required
+        />
+
+        <p
+          ng-show="studentForm.studentName.$touched && studentForm.studentName.$invalid"
+          style="color: red"
+        >
+          Student Name is required.
+        </p>
+
+        <br /><br />
+
+        <label>Student email:</label>
+        <input
+          type="email"
+          name="studentEmail"
+          ng-model="student.email"
+          required
+        />
+
+        <p
+          ng-show="studentForm.studentEmail.$touched && studentForm.studentEmail.$invalid"
+          style="color: red"
+        >
+          Enter a valid email.
+        </p>
+        <br /><br />
+
+        <button>Register Student</button>
+      </form>
+
+      <br /><br />
+
+      <!-- FORM STATUS -->
+      <h2>Form Status</h2>
+
+      <p>valid: {{studentForm.$valid}}</p>
+
+      <p>invalid: {{studentForm.$invalid}}</p>
+
+      <p>pristine: {{studentForm.$pristine}}</p>
+
+      <p>dirty: {{studentForm.$dirty}}</p>
+
+      <p
+        ng-show="studentForm.studentForm.$touched && studentForm.studentForm.$invalid"
+        style="color: red"
+      ></p>
+
+      
         <footer>
             <p>
                 Campus 360 · Student Management Dashboard
