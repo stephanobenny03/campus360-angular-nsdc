@@ -382,3 +382,93 @@ button{
 }
 
 }
+
+/* ------------------------------
+   STUDENT REGISTRATION
+------------------------------ */
+
+.dashboard-container > h2{
+    margin-bottom:20px;
+    color:#0f4c81;
+    font-size:28px;
+    font-weight:600;
+}
+
+.dashboard-container > form{
+    background:#ffffff;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 6px 20px rgba(0,0,0,.08);
+    margin-bottom:25px;
+    transition:.3s;
+}
+
+.dashboard-container > form:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+
+.dashboard-container > form input{
+    width:100%;
+    max-width:500px;
+    padding:12px 15px;
+    margin-bottom:16px;
+    border:1px solid #cbd5e1;
+    border-radius:10px;
+    font-size:15px;
+    outline:none;
+    transition:.3s;
+}
+
+.dashboard-container > form input:focus{
+    border-color:#1976d2;
+    box-shadow:0 0 0 4px rgba(25,118,210,.15);
+}
+
+.dashboard-container > form button{
+    margin-top:8px;
+    background:#1976d2;
+    color:#fff;
+    border:none;
+    padding:12px 22px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.dashboard-container > form button:hover{
+    background:#125aa3;
+}
+
+
+/* ------------------------------
+   FORM STATUS
+------------------------------ */
+
+.dashboard-container > h2 ~ p{
+    margin-bottom:12px;
+    padding:14px 18px;
+    background:#f8fbff;
+    color:#334155;
+    border-left:5px solid #1976d2;
+    border-radius:8px;
+    box-shadow:0 3px 10px rgba(0,0,0,.05);
+    font-size:15px;
+}
+
+
+/* ------------------------------
+   ANGULARJS FORM VALIDATION
+------------------------------ */
+
+input.ng-dirty.ng-invalid{
+    border-color:#dc2626;
+    background:#fff5f5;
+    box-shadow:0 0 0 4px rgba(220,38,38,.12);
+}
+
+input.ng-dirty.ng-valid{
+    border-color:#16a34a;
+    background:#f0fdf4;
+    box-shadow:0 0 0 4px rgba(22,163,74,.12);
+}
